@@ -1,5 +1,4 @@
-#!/bin/bash
-# set -x
+# (c) Star Bots Tamil
 
 echo "## CHANGELOGS"
 
