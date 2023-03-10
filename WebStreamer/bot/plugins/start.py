@@ -1,3 +1,5 @@
+# (c) Star Bots Tamil
+
 from pyrogram import filters
 from pyrogram.types import Message
 from pyrogram import Client
