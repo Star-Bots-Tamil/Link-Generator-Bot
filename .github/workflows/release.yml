@@ -1,3 +1,5 @@
+# (c) Star Bots Tamil
+
 name: Release
 on:
   workflow_dispatch:
