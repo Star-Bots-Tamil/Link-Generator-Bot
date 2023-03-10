@@ -1,3 +1,5 @@
+# (c) Star Bots Tamil
+
 import logging
 import os
 import threading
