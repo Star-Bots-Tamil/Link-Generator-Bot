@@ -1,17 +1,18 @@
-[![StandWithUkraineBanner](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://supportukrainenow.org/)
-<h1 align="center">Telegram File Stream Bot</h1>
+# (c) Star Bots Tamil
+
+<h1 align="center">File to Link Star Bots</h1>
 <p align="center">
-  <a href="https://github.com/EverythingSuckz/TG-FileStreamBot">
-    <img src="https://socialify.git.ci/EverythingSuckz/TG-FileStreamBot/image?description=1&font=Source%20Code%20Pro&forks=1&issues=1&logo=https://telegra.ph/file/01385a9f4cf0419682b87.png&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Dark" alt="Cover Image" width="650">
+  <a href="https://github.com/Star-Bots-Tamil/Link-Generator-Bot">
+    <img src="https://socialify.git.ci/Star-Bots-Tamil/Link-Generator-Bot/image?description=1&font=Source%20Code%20Pro&forks=1&issues=1&logo=https://telegra.ph/file/01385a9f4cf0419682b87.png&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Dark" alt="Cover Image" width="650">
   </a>
   <p align="center">
     A Telegram bot to <b>generate direct link</b> for your Telegram files.
     <br />
-    <a href="https://telegram.dog/TG_FileStreamBot"><strong>Demo Bot »</strong></a>
+    <a href="https://telegram.dog/File_to_Link_Star_Bot"><strong>Our Bot »</strong></a>
     <br />
-    <a href="https://github.com/EverythingSuckz/TG-FileStreamBot/issues">Report a Bug</a>
+    <a href="https://github.com/Star-Bots-Tamil/Link-Generator-Bot/issues">Report a Bug</a>
     |
-    <a href="https://github.com/EverythingSuckz/TG-FileStreamBot/issues">Request Feature</a>
+    <a href="https://github.com/Star-Bots-Tamil/Link-Generator-Bot/issues">Request Feature</a>
   </p>
 </p>
 
