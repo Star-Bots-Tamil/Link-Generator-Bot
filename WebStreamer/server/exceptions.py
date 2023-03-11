@@ -1,3 +1,4 @@
+# (c) Star Bots Tamil
 
 class InvalidHash(Exception):
     message = "Invalid hash"
