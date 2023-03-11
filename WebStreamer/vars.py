@@ -1,3 +1,5 @@
+# (c) Star Bots Tamil
+
 import sys
 from os import environ
 from dotenv import load_dotenv
