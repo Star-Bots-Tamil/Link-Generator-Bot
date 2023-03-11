@@ -15,7 +15,6 @@ from WebStreamer.utils.human_readable import humanbytes
 
 links = []
 @StreamBot.on_message(filters.private | filters.command("multi")
-    filters.private
     & (
         filters.document
         | filters.video
