@@ -1,3 +1,5 @@
+# (c) Star Bots Tamil
+
 import datetime
 
 import motor.motor_asyncio
