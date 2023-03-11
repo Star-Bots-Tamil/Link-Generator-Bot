@@ -1,3 +1,5 @@
+# (c) Star Bots Tamil
+
 import math
 import asyncio
 import logging
