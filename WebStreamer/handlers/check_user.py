@@ -1,3 +1,5 @@
+# (c) Star Bots Tamil
+
 import datetime
 
 from WebStreamer.vars import Var
