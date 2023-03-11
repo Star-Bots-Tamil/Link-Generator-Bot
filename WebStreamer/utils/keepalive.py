@@ -1,3 +1,5 @@
+# (c) Star Bots Tamil
+
 import asyncio
 import logging
 import aiohttp
