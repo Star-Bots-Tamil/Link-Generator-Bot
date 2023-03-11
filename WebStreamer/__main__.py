@@ -1,5 +1,4 @@
-# This file is a part of TG-FileStreamBot
-# Coding : Jyothis Jayanth [@EverythingSuckz]
+# (c) Star Bots Tamil
 
 import sys
 import asyncio
@@ -46,7 +45,7 @@ async def start_services():
         asyncio.create_task(utils.ping_server())
     await server.setup()
     await web.TCPSite(server, Var.BIND_ADDRESS, Var.PORT).start()
-    logging.info("Service Started")
+    logging.info("Bot Started")
     logging.info("bot =>> {}".format(bot_info.first_name))
     if bot_info.dc_id:
         logging.info("DC ID =>> {}".format(str(bot_info.dc_id)))
@@ -66,4 +65,4 @@ if __name__ == "__main__":
     finally:
         loop.run_until_complete(cleanup())
         loop.stop()
-        logging.info("Stopped Services")
+        logging.info("Bot Stopped!.")
