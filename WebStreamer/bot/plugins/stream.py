@@ -14,19 +14,7 @@ from WebStreamer.bot import StreamBot
 from WebStreamer.utils.human_readable import humanbytes
 
 links = []
-@StreamBot.on_message(filters.private | filters.command("multi")
-    & (
-        filters.document
-        | filters.video
-        | filters.audio
-        | filters.animation
-        | filters.voice
-        | filters.video_note
-        | filters.photo
-        | filters.sticker
-    ),
-    group=4,
-))
+@StreamBot.on_message(filters.private | filters.command("multi") & (filters.document | filters.video | filters.audio | filters.voice | filters.animation | filters.sticker | filters.photo | filters.video_note) & ~filters.edited, group=4)
 async def multi_files(bot, msg):
     if Var.ALLOWED_USERS and not ((str(msg.from_user.id) in Var.ALLOWED_USERS) or (msg.from_user.username in Var.ALLOWED_USERS)):
         return await msg.reply(
