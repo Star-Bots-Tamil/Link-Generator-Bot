@@ -62,6 +62,7 @@ async def media_receive_handler(_, m: Message):
     log_msg = await m.forward(chat_id=Var.BIN_CHANNEL)
     file_hash = get_hash(log_msg, Var.HASH_LENGTH)
     stream_link = f"{Var.URL}{log_msg.id}/{quote_plus(get_name(m))}?hash={file_hash}"
+    online_link = f"{Var.URL}Watch/{log_msg.id}/{quote_plus(get_name(m))}?hash={file_hash}"
     short_link = f"{Var.URL}{file_hash}{log_msg.id}"
     file_caption = m.caption
     file_name = get_name(log_msg)
@@ -69,13 +70,13 @@ async def media_receive_handler(_, m: Message):
     logging.info(f"Generated link :- {stream_link} for {m.from_user.first_name}")
     try:
         await m.reply_text(
-            text="<b>File Name :- {}\nFile Size :- {}\nFile Captain :- {}\n➠ Link :- [Click here]({})</b>\n<b>(<a href='{}'>Shortened</a>)</b>".format(
-                file_name, file_size, file_caption, stream_link, short_link
+            text="<b>📁 File Name :- {}\n📦 File Size :- {}\n🔠 File Captain :- {}\n📥 Download Link :- {}\n🖥 Watch Link :- {}/n<b>(<a href='{}'>🔗 Shortened Link</a>)</b>".format(
+                file_name, file_size, file_caption, stream_link, online_link, short_link
             ),
             quote=True,
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton("📥 Download Link", url=stream_link)], [InlineKeyboardButton("🔗 Shortened Link", url=short_link)], [InlineKeyboardButton("🔥 Update Channel", url="https://t.me/Star_Moviess_Tamil")]]
+                [[InlineKeyboardButton("📥 Download Link", url=stream_link)], [InlineKeyboardButton("🖥 Watch Link", url=online_link)], [InlineKeyboardButton("🔗 Shortened Link", url=short_link)], [InlineKeyboardButton("🔥 Update Channel", url="https://t.me/Star_Moviess_Tamil")]]
             ),
         )
     except errors.ButtonUrlInvalid:
