@@ -72,7 +72,7 @@ async def start(_, m: Message):
     if Var.ALLOWED_USERS and not ((str(m.from_user.id) in Var.ALLOWED_USERS) or (m.from_user.username in Var.ALLOWED_USERS)):
         return await m.reply(
             "<b>Hello 👋🏻 {mention} ❤️,
-            Sorry {mention}! You are not the Subscriber of Our Premium Plans, Only Subscribers of Our Premium Plans Can Use Our [File to Link Star Bots](https://t.me/File_to_Link_Star_Bot).</b>",
+            Sorry {mention}! You're not the Subscriber of Our Premium Plans, Only Subscribers of Our Premium Plans Can Use Our <a href='https://t.me/File_to_Link_Star_Bot'>File to Link Star Bots</a>.</b>",
             disable_web_page_preview=True, quote=True
         )
     await m.reply_text(
