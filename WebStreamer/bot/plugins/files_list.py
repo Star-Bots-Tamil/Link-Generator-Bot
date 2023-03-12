@@ -12,4 +12,4 @@ def ns_filter(_,__,message):
    else:
       return False
 
-files_list = filters.create(ns_filter)
+files_list_filter = filters.create(ns_filter)
