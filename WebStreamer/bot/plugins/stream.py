@@ -70,19 +70,19 @@ async def media_receive_handler(_, m: Message):
     logging.info(f"Generated link :- {stream_link} for {m.from_user.first_name}")
     try:
         await m.reply_text(
-            text="<b>📁 File Name :- {}\n📦 File Size :- {}\n🔠 File Captain :- {}\n📥 Download Link :- {}\n🖥 Watch Link :- {}/n<b>(<a href='{}'>🔗 Shortened Link</a>)</b>".format(
+            text="<b>Your Link is Generated... ⚡\n\n📁 File Name :- {}\n\n📦 File Size :- {}\n\n🔠 File Captain :- {}\n\n📥 Download Link :- {}\n\n🖥 Watch Link :- {}\n\n(<a href='{}'>🔗 Shortened Link</a>)\n\n❗ Note :- This Link is Permanent and Won't Gets Expired 🚫</b>".format(
                 file_name, file_size, file_caption, stream_link, online_link, short_link
             ),
             quote=True,
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton("📥 Download Link", url=stream_link)], [InlineKeyboardButton("🖥 Watch Link", url=online_link)], [InlineKeyboardButton("🔗 Shortened Link", url=short_link)], [InlineKeyboardButton("🔥 Update Channel", url="https://t.me/Star_Moviess_Tamil")]]
+                [[InlineKeyboardButton("📥 Download Link", url=stream_link)], [InlineKeyboardButton("🖥 Watch Link", url=online_link)], [InlineKeyboardButton("🔗 Shortened Link", url=short_link)], [InlineKeyboardButton("🔥 Update Channel", url="https://t.me/Star_Bots_Tamil")]]
             ),
         )
     except errors.ButtonUrlInvalid:
         await m.reply_text(
-            text="<b>File Name :- {}\nFile Size :- {}\nFile Captain :- {}\n➠ Link :- [Click here]({})</b>\n<b>(<a href='{}'>Shortened</a>)</b>".format(
-                file_name, file_size, file_caption, stream_link, short_link
+            text="<b>Your Link is Generated... ⚡\n\n📁 File Name :- {}\n\n📦 File Size :- {}\n\n🔠 File Captain :- {}\n\n📥 Download Link :- {}\n\n🖥 Watch Link :- {}\n\n(<a href='{}'>🔗 Shortened Link</a>)\n\n❗ Note :- This Link is Permanent and Won't Gets Expired 🚫</b>".format(
+                file_name, file_size, file_caption, stream_link, online_link, short_link
             ),
             quote=True,
             parse_mode=ParseMode.HTML,
