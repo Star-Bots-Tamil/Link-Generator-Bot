@@ -69,6 +69,12 @@ async def _(bot, cmd):
 async def start(_, m: Message):
     reply_markup = InlineKeyboardMarkup(MAIN_MENU_BUTTONS)
     mention = m.from_user.mention(style="md")
+    if Var.ALLOWED_USERS and not ((str(m.from_user.id) in Var.ALLOWED_USERS) or (m.from_user.username in Var.ALLOWED_USERS)):
+        return await m.reply(
+            "<b>Hello 👋🏻 {mention} ❤️,
+            Sorry {mention}! You're not the Subscriber of Our Premium Plans, Only Subscribers of Our Premium Plans Can Use Our [File to Link Star Bots](https://t.me/File_to_Link_Star_Bot).</b>",
+            disable_web_page_preview=True, quote=True
+        )
     await m.reply_text(
             text="<b>Hi 👋🏻 {} ♥️,\nI'm an Star Bots Official [File to Link Star Bots](https://t.me/File_to_Link_Star_Bot).\nMaintenance By :- [Karthik](https://t.me/TG_Karthik)\nI'm Generate Permanent Link From Telegram File 📂 / Video 🎥. I Can Generate Direct Download Link For any File / Video to Get  📥 Download Link,  🖥 Watch Link and 🔗 Shortened Link. Send me Any File / Video to See My Magic ✨.\n\n❗Note :- 🔞 Don't Forward  Porn Files to me, You will Get 🚨 Permanent BAN\n\nMore than [8 Types of Telegram Files](https://t.me/File_to_Link_Star_Bot?start=Files_List) are Supported</b>".format(
                 mention
@@ -95,6 +101,12 @@ HELP_BUTTONS = [
 async def help(client, message):
     reply_markup = InlineKeyboardMarkup(HELP_BUTTONS)
     mention = message.from_user.mention
+    if Var.ALLOWED_USERS and not ((str(m.from_user.id) in Var.ALLOWED_USERS) or (m.from_user.username in Var.ALLOWED_USERS)):
+        return await m.reply(
+            "<b>Hello 👋🏻 {mention} ❤️,
+            Sorry {mention}! You're not the Subscriber of Our Premium Plans, Only Subscribers of Our Premium Plans Can Use Our [File to Link Star Bots](https://t.me/File_to_Link_Star_Bot).</b>",
+            disable_web_page_preview=True, quote=True
+        )
     await message.reply_text(
             text="<b>Hi 👋🏻 {} ♥️,  Send me a File 📂 to get an Instant Stream link.</b>".format(
                 mention
@@ -119,6 +131,12 @@ ABOUT_BUTTONS = [
 async def about(client, message):
     mention = message.from_user.mention
     reply_markup = InlineKeyboardMarkup(ABOUT_BUTTONS)
+    if Var.ALLOWED_USERS and not ((str(m.from_user.id) in Var.ALLOWED_USERS) or (m.from_user.username in Var.ALLOWED_USERS)):
+        return await m.reply(
+            "<b>Hello 👋🏻 {mention} ❤️,
+            Sorry {mention}! You're not the Subscriber of Our Premium Plans, Only Subscribers of Our Premium Plans Can Use Our [File to Link Star Bots](https://t.me/File_to_Link_Star_Bot).</b>",
+            disable_web_page_preview=True, quote=True
+        )
     await message.reply_text(
             text="<b>Hi 👋🏻 {} ♥️,  Send me a File 📂 to get an Instant Stream link.</b>".format(
                 mention
@@ -259,3 +277,33 @@ async def sts(c, m):
         text=f"**Total Users in Database 📂 :- {await db.total_users_count()}**",
         quote=True
     )
+
+################################################################################################################################################################################################################################################
+# Telegram Files List
+
+FILES_LIST_BUTTONS = [
+            [
+                InlineKeyboardButton('👨🏻‍💻 Creator', url='https://t.me/Star_Movies_Karthik'),
+                InlineKeyboardButton('📢 Update Channel', url='https://t.me/Star_Moviess_Tamil')
+            ]
+        ]
+
+@StreamBot.on_message(files_list_filter)
+async def files_list(client, message):
+    mention = message.from_user.mention
+    reply_markup = InlineKeyboardMarkup(ABOUT_BUTTONS)
+    if Var.ALLOWED_USERS and not ((str(m.from_user.id) in Var.ALLOWED_USERS) or (m.from_user.username in Var.ALLOWED_USERS)):
+        return await m.reply(
+            "<b>Hello 👋🏻 {mention} ❤️,
+            Sorry {mention}! You're not the Subscriber of Our Premium Plans, Only Subscribers of Our Premium Plans Can Use Our [File to Link Star Bots](https://t.me/File_to_Link_Star_Bot).</b>",
+            disable_web_page_preview=True, quote=True
+        )
+    await message.reply_text(
+            text="<b>Hi 👋🏻 {} ♥️, Telegram Files List</b>".format(
+                mention
+            ),
+            quote=True,
+            parse_mode=ParseMode.HTML,
+            reply_markup=reply_markup,
+            disable_web_page_preview=True
+        )
