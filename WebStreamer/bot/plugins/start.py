@@ -11,6 +11,7 @@ from WebStreamer.vars import Var
 from WebStreamer.bot import StreamBot
 from pyrogram.enums.parse_mode import ParseMode
 from pyrogram.errors import MessageNotModified, UserIsBlocked, InputUserDeactivated, FloodWait
+from WebStreamer.bot.plugins.start_filter import *
 import os
 import time
 import string
@@ -64,12 +65,12 @@ async def _(bot, cmd):
         else:
             logging.info(f"New User :- Name :- {message.from_user.first_name} ID :- {message.from_user.id}")
 
-@StreamBot.on_message(filters.command("start") & filters.private)
+@StreamBot.on_message(start_filter)
 async def start(_, m: Message):
     reply_markup = InlineKeyboardMarkup(MAIN_MENU_BUTTONS)
     mention = m.from_user.mention(style="md")
     await m.reply_text(
-            text="<b>Hi 👋🏻 {} ♥️,\nI'm an Star Bots Official [File to Link Star Bots](https://t.me/File_to_Link_Star_Bot).\nMaintenance By :- [Karthik](https://t.me/TG_Karthik)\nI'm Generate Permanent Link From Telegram File 📂 / Video 🎥. I Can Generate Direct Download Link For any File / Video to Get  📥 Download Link,  🖥 Watch Link and 🔗 Shortened Link. Send me Any File / Video to See My Magic ✨.\n\n❗Note :- 🔞 Don't Forward  Porn Files to me, You will Get 🚨 Permanent BAN\n\nMore than [8 Types of Telegram Files](https://t.me/File_to_Link_Star_Bot?start=Lists_of_Files) are Supported</b>".format(
+            text="<b>Hi 👋🏻 {} ♥️,\nI'm an Star Bots Official [File to Link Star Bots](https://t.me/File_to_Link_Star_Bot).\nMaintenance By :- [Karthik](https://t.me/TG_Karthik)\nI'm Generate Permanent Link From Telegram File 📂 / Video 🎥. I Can Generate Direct Download Link For any File / Video to Get  📥 Download Link,  🖥 Watch Link and 🔗 Shortened Link. Send me Any File / Video to See My Magic ✨.\n\n❗Note :- 🔞 Don't Forward  Porn Files to me, You will Get 🚨 Permanent BAN\n\nMore than [8 Types of Telegram Files](https://t.me/File_to_Link_Star_Bot?start=Files_List) are Supported</b>".format(
                 mention
             ),
             quote=True,
