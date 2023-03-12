@@ -71,8 +71,7 @@ async def start(_, m: Message):
     mention = m.from_user.mention(style="md")
     if Var.ALLOWED_USERS and not ((str(m.from_user.id) in Var.ALLOWED_USERS) or (m.from_user.username in Var.ALLOWED_USERS)):
         return await m.reply(
-            "<b>Hello 👋🏻 {mention} ❤️,
-            Sorry {mention}! You're not the Subscriber of Our Premium Plans, Only Subscribers of Our Premium Plans Can Use Our <a href='https://t.me/File_to_Link_Star_Bot'>File to Link Star Bots</a>.</b>",
+            "<b>Hello 👋🏻 {mention} ❤️,\nSorry {mention}! You're not the Subscriber of Our Premium Plans, Only Subscribers of Our Premium Plans Can Use Our <a href='https://t.me/File_to_Link_Star_Bot'>File to Link Star Bots</a>.</b>",
             disable_web_page_preview=True, quote=True
         )
     await m.reply_text(
@@ -103,8 +102,7 @@ async def help(client, message):
     mention = message.from_user.mention
     if Var.ALLOWED_USERS and not ((str(m.from_user.id) in Var.ALLOWED_USERS) or (m.from_user.username in Var.ALLOWED_USERS)):
         return await m.reply(
-            "<b>Hello 👋🏻 {mention} ❤️,
-            Sorry {mention}! You're not the Subscriber of Our Premium Plans, Only Subscribers of Our Premium Plans Can Use Our [File to Link Star Bots](https://t.me/File_to_Link_Star_Bot).</b>",
+            "<b>Hello 👋🏻 {mention} ❤️,\nSorry {mention}! You're not the Subscriber of Our Premium Plans, Only Subscribers of Our Premium Plans Can Use Our [File to Link Star Bots](https://t.me/File_to_Link_Star_Bot).</b>",
             disable_web_page_preview=True, quote=True
         )
     await message.reply_text(
@@ -133,8 +131,7 @@ async def about(client, message):
     reply_markup = InlineKeyboardMarkup(ABOUT_BUTTONS)
     if Var.ALLOWED_USERS and not ((str(m.from_user.id) in Var.ALLOWED_USERS) or (m.from_user.username in Var.ALLOWED_USERS)):
         return await m.reply(
-            "<b>Hello 👋🏻 {mention} ❤️,
-            Sorry {mention}! You're not the Subscriber of Our Premium Plans, Only Subscribers of Our Premium Plans Can Use Our [File to Link Star Bots](https://t.me/File_to_Link_Star_Bot).</b>",
+            "<b>Hello 👋🏻 {mention} ❤️,\nSorry {mention}! You're not the Subscriber of Our Premium Plans, Only Subscribers of Our Premium Plans Can Use Our [File to Link Star Bots](https://t.me/File_to_Link_Star_Bot).</b>",
             disable_web_page_preview=True, quote=True
         )
     await message.reply_text(
@@ -294,8 +291,7 @@ async def files_list(client, message):
     reply_markup = InlineKeyboardMarkup(ABOUT_BUTTONS)
     if Var.ALLOWED_USERS and not ((str(m.from_user.id) in Var.ALLOWED_USERS) or (m.from_user.username in Var.ALLOWED_USERS)):
         return await m.reply(
-            "<b>Hello 👋🏻 {mention} ❤️,
-            Sorry {mention}! You're not the Subscriber of Our Premium Plans, Only Subscribers of Our Premium Plans Can Use Our [File to Link Star Bots](https://t.me/File_to_Link_Star_Bot).</b>",
+            "<b>Hello 👋🏻 {mention} ❤️,\nSorry {mention}! You're not the Subscriber of Our Premium Plans, Only Subscribers of Our Premium Plans Can Use Our [File to Link Star Bots](https://t.me/File_to_Link_Star_Bot).</b>",
             disable_web_page_preview=True, quote=True
         )
     await message.reply_text(
