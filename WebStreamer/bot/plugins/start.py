@@ -11,8 +11,6 @@ from WebStreamer.vars import Var
 from WebStreamer.bot import StreamBot
 from pyrogram.enums.parse_mode import ParseMode
 from pyrogram.errors import MessageNotModified, UserIsBlocked, InputUserDeactivated, FloodWait
-from WebStreamer.bot.plugins.start_filter import *
-from WebStreamer.bot.plugins.files_list import *
 import os
 import time
 import string
@@ -66,17 +64,18 @@ async def _(bot, cmd):
         else:
             logging.info(f"New User :- Name :- {message.from_user.first_name} ID :- {message.from_user.id}")
 
-@StreamBot.on_message(start_filter)
+@StreamBot.on_message(filters.command("start") & filters.private)
 async def start(_, m: Message):
     reply_markup = InlineKeyboardMarkup(MAIN_MENU_BUTTONS)
     mention = m.from_user.mention(style="md")
     if Var.ALLOWED_USERS and not ((str(m.from_user.id) in Var.ALLOWED_USERS) or (m.from_user.username in Var.ALLOWED_USERS)):
         return await m.reply(
-            "<b>Hello 👋🏻 {mention} ❤️,\nSorry {mention}! You're not the Subscriber of Our Premium Plans, Only Subscribers of Our Premium Plans Can Use Our <a href='https://t.me/File_to_Link_Star_Bot'>File to Link Star Bots</a>.</b>",
+            "<b>You are not in the allowed list of users who can use me. \
+            Check <a href='https://github.com/EverythingSuckz/TG-FileStreamBot#optional-vars'>this link</a> for more info.</b>",
             disable_web_page_preview=True, quote=True
         )
     await m.reply_text(
-            text="<b>Hi 👋🏻 {} ♥️,\nI'm an Star Bots Official [File to Link Star Bots](https://t.me/File_to_Link_Star_Bot).\nMaintenance By :- [Karthik](https://t.me/TG_Karthik)\nI'm Generate Permanent Link From Telegram File 📂 / Video 🎥. I Can Generate Direct Download Link For any File / Video to Get  📥 Download Link,  🖥 Watch Link and 🔗 Shortened Link. Send me Any File / Video to See My Magic ✨.\n\n❗Note :- 🔞 Don't Forward  Porn Files to me, You will Get 🚨 Permanent BAN\n\nMore than [8 Types of Telegram Files](https://t.me/File_to_Link_Star_Bot?start=Files_List) are Supported</b>".format(
+            text="<b>Hi 👋🏻 {} ♥️,  Send me a File 📂 to get an Instant Stream link.</b>".format(
                 mention
             ),
             quote=True,
@@ -101,9 +100,10 @@ HELP_BUTTONS = [
 async def help(client, message):
     reply_markup = InlineKeyboardMarkup(HELP_BUTTONS)
     mention = message.from_user.mention
-    if Var.ALLOWED_USERS and not ((str(m.from_user.id) in Var.ALLOWED_USERS) or (m.from_user.username in Var.ALLOWED_USERS)):
-        return await m.reply(
-            "<b>Hello 👋🏻 {mention} ❤️,\nSorry {mention}! You're not the Subscriber of Our Premium Plans, Only Subscribers of Our Premium Plans Can Use Our [File to Link Star Bots](https://t.me/File_to_Link_Star_Bot).</b>",
+    if Var.ALLOWED_USERS and not ((str(message.from_user.id) in Var.ALLOWED_USERS) or (message.from_user.username in Var.ALLOWED_USERS)):
+        return await message.reply(
+            "<b>You are not in the allowed list of users who can use me. \
+            Check <a href='https://github.com/EverythingSuckz/TG-FileStreamBot#optional-vars'>this link</a> for more info.</b>",
             disable_web_page_preview=True, quote=True
         )
     await message.reply_text(
@@ -130,9 +130,10 @@ ABOUT_BUTTONS = [
 async def about(client, message):
     mention = message.from_user.mention
     reply_markup = InlineKeyboardMarkup(ABOUT_BUTTONS)
-    if Var.ALLOWED_USERS and not ((str(m.from_user.id) in Var.ALLOWED_USERS) or (m.from_user.username in Var.ALLOWED_USERS)):
-        return await m.reply(
-            "<b>Hello 👋🏻 {mention} ❤️,\nSorry {mention}! You're not the Subscriber of Our Premium Plans, Only Subscribers of Our Premium Plans Can Use Our [File to Link Star Bots](https://t.me/File_to_Link_Star_Bot).</b>",
+    if Var.ALLOWED_USERS and not ((str(message.from_user.id) in Var.ALLOWED_USERS) or (message.from_user.username in Var.ALLOWED_USERS)):
+        return await message.reply(
+            "<b>You are not in the allowed list of users who can use me. \
+            Check <a href='https://github.com/EverythingSuckz/TG-FileStreamBot#optional-vars'>this link</a> for more info.</b>",
             disable_web_page_preview=True, quote=True
         )
     await message.reply_text(
@@ -219,7 +220,7 @@ async def callback_query(client: Client, query: CallbackQuery):
     elif query.data=="START_CALLBACK":
         START_BUTTONS = [
             [
-                InlineKeyboardButton('👨🏻‍💻 Creator', url='https://t.me/TG_Karthik')
+                InlineKeyboardButton('👨🏻‍💻 Creator', url='https://t.me/Star_Movies_Karthik')
             ],
             [
                 InlineKeyboardButton('😁 Help', callback_data="TUTORIAL_CALLBACK"),
@@ -227,7 +228,7 @@ async def callback_query(client: Client, query: CallbackQuery):
                 InlineKeyboardButton('😎 About', callback_data="HELP_CALLBACK")
             ],
             [
-                InlineKeyboardButton('📢 Update Channel', url='https://t.me/Star_Bots_Tamil')
+                InlineKeyboardButton('📢 Update Channel', url='https://t.me/Star_Moviess_Tamil')
             ]
         ]
 
