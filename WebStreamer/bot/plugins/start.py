@@ -11,8 +11,6 @@ from WebStreamer.vars import Var
 from WebStreamer.bot import StreamBot
 from pyrogram.enums.parse_mode import ParseMode
 from pyrogram.errors import MessageNotModified, UserIsBlocked, InputUserDeactivated, FloodWait
-from WebStreamer.bot.plugins.start_filter import *
-from WebStreamer.bot.plugins.files_list import *
 import os
 import time
 import string
