@@ -64,7 +64,7 @@ async def _(bot, cmd):
         else:
             logging.info(f"New User :- Name :- {message.from_user.first_name} ID :- {message.from_user.id}")
 
-@StreamBot.on_message(filters.command("start") & filters.private & filters.incoming)
+@StreamBot.on_message(filters.command("start"))
 async def start(client, m: Message):
     reply_markup = InlineKeyboardMarkup(MAIN_MENU_BUTTONS)
     mention = m.from_user.mention(style="md")
